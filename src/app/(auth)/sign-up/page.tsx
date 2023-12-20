@@ -10,6 +10,7 @@ import Link from "next/link";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod"
 import { AuthCredentialsValidator, TAuthCredentialsValidator } from "@/lib/validators/auth-credentials-validator";
+import { trpc } from "@/trpc/client";
 
 const Page = () => {
   const {
@@ -19,6 +20,10 @@ const Page = () => {
   } = useForm<TAuthCredentialsValidator>({
     resolver: zodResolver(AuthCredentialsValidator),
   });
+
+  const {data} = trpc.myApiRoute.useQuery();
+  console.log(data);
+  
 
   function onSubmit({email, password} : TAuthCredentialsValidator) {
     // send data to server for backend db stuff... check the next commit..
