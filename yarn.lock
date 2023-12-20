@@ -1338,6 +1338,15 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@hookform/resolvers@npm:^3.3.2":
+  version: 3.3.2
+  resolution: "@hookform/resolvers@npm:3.3.2"
+  peerDependencies:
+    react-hook-form: ^7.0.0
+  checksum: 538c86a744c71735a5c3be7b450c704111fe53a52634463ed3c801681d57504d3717ab5f7bd20e99ee87d81a9da0aca640af0837eb807486d9d5c927269a9b37
+  languageName: node
+  linkType: hard
+
 "@humanwhocodes/config-array@npm:^0.11.13":
   version: 0.11.13
   resolution: "@humanwhocodes/config-array@npm:0.11.13"
@@ -1866,6 +1875,26 @@ __metadata:
     "@types/react":
       optional: true
   checksum: e2859ca58bea171c956098ace7ecf615cf9432f58a118b779a14720746b3adcf0351c36c75de131548672d3cd290ca238198acbd33b88dc4706f98312e9317ad
+  languageName: node
+  linkType: hard
+
+"@radix-ui/react-label@npm:^2.0.2":
+  version: 2.0.2
+  resolution: "@radix-ui/react-label@npm:2.0.2"
+  dependencies:
+    "@babel/runtime": "npm:^7.13.10"
+    "@radix-ui/react-primitive": "npm:1.0.3"
+  peerDependencies:
+    "@types/react": "*"
+    "@types/react-dom": "*"
+    react: ^16.8 || ^17.0 || ^18.0
+    react-dom: ^16.8 || ^17.0 || ^18.0
+  peerDependenciesMeta:
+    "@types/react":
+      optional: true
+    "@types/react-dom":
+      optional: true
+  checksum: a6528735b9f3e15ad83b7a905861bbc5a9b9236716957d6e99902bbfced0472aed4ddbf519bc0e6c41f528986e7acf7270cf0734a2fc380a547a8640809d3a81
   languageName: node
   linkType: hard
 
@@ -10335,6 +10364,15 @@ __metadata:
   languageName: node
   linkType: hard
 
+"react-hook-form@npm:^7.49.2":
+  version: 7.49.2
+  resolution: "react-hook-form@npm:7.49.2"
+  peerDependencies:
+    react: ^16.8.0 || ^17 || ^18
+  checksum: 8e2d3209d49a816f08e61a3b1847e9edff5ecb6e5b3cd056780c2331f8bb32aa0b7a2542bece602b415ddd4009023c5d054a27a021dc5014672623d5990853c8
+  languageName: node
+  linkType: hard
+
 "react-i18next@npm:11.18.6":
   version: 11.18.6
   resolution: "react-i18next@npm:11.18.6"
@@ -11290,6 +11328,16 @@ __metadata:
   dependencies:
     atomic-sleep: "npm:^1.0.0"
   checksum: 57a3d560efb77f4576db111168ee2649c99e7869fda6ce0ec2a4e5458832d290ba58d74b073ddb5827d9a30f96d23cff79157993d919e1a6d5f28d8b6391c7f0
+  languageName: node
+  linkType: hard
+
+"sonner@npm:^1.2.4":
+  version: 1.2.4
+  resolution: "sonner@npm:1.2.4"
+  peerDependencies:
+    react: ^18.0.0
+    react-dom: ^18.0.0
+  checksum: 760732ab0c687ce696c44f7c0face1fc06308c1cfb08e333476e22a4cbf1ace11872f0d04146f2e6dc7a411760254588b30e856048ed0f1efa916070f0339a12
   languageName: node
   linkType: hard
 
@@ -12379,10 +12427,12 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "vetted-vittles@workspace:."
   dependencies:
+    "@hookform/resolvers": "npm:^3.3.2"
     "@payloadcms/bundler-webpack": "npm:^1.0.5"
     "@payloadcms/db-mongodb": "npm:^1.1.0"
     "@payloadcms/richtext-slate": "npm:^1.3.1"
     "@radix-ui/react-dialog": "npm:^1.0.5"
+    "@radix-ui/react-label": "npm:^2.0.2"
     "@radix-ui/react-separator": "npm:^1.0.3"
     "@radix-ui/react-slot": "npm:^1.0.2"
     "@types/express": "npm:^4"
@@ -12404,10 +12454,13 @@ __metadata:
     postcss: "npm:^8"
     react: "npm:^18"
     react-dom: "npm:^18"
+    react-hook-form: "npm:^7.49.2"
+    sonner: "npm:^1.2.4"
     tailwind-merge: "npm:^2.1.0"
     tailwindcss: "npm:^3.3.0"
     tailwindcss-animate: "npm:^1.0.7"
     typescript: "npm:^5"
+    zod: "npm:^3.22.4"
   languageName: unknown
   linkType: soft
 
@@ -12804,5 +12857,12 @@ __metadata:
   version: 0.1.0
   resolution: "yocto-queue@npm:0.1.0"
   checksum: dceb44c28578b31641e13695d200d34ec4ab3966a5729814d5445b194933c096b7ced71494ce53a0e8820685d1d010df8b2422e5bf2cdea7e469d97ffbea306f
+  languageName: node
+  linkType: hard
+
+"zod@npm:^3.22.4":
+  version: 3.22.4
+  resolution: "zod@npm:3.22.4"
+  checksum: 7578ab283dac0eee66a0ad0fc4a7f28c43e6745aadb3a529f59a4b851aa10872b3890398b3160f257f4b6817b4ce643debdda4fb21a2c040adda7862cab0a587
   languageName: node
   linkType: hard
