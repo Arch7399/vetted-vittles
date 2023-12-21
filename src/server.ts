@@ -44,13 +44,13 @@ const start = async () => {
 
   // Start Next.js app and log messages
   nextApp.prepare().then(() => {
-    //payload.logger.info("Nextjs started");
+    payload.logger.info("Nextjs started");
 
     // Start the Express server and log the server URL
     app.listen(PORT, async () => {
-      //payload.logger.info(
-      //  `Nextjs app URL: ${process.env.NEXT_PUBLIC_SERVER_URL}`
-      //);
+      payload.logger.info(
+        `Nextjs app URL: ${process.env.NEXT_PUBLIC_SERVER_URL}`
+      );
     });
   });
 };

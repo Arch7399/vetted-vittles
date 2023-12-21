@@ -4,14 +4,20 @@ import { mongooseAdapter } from "@payloadcms/db-mongodb";
 import { slateEditor } from "@payloadcms/richtext-slate";
 import { buildConfig } from "payload/config";
 import path from "path";
+import { Users } from "./collections/Users";
+import dotenv from "dotenv";
+
+dotenv.config({
+    path: path.resolve(__dirname, "../.env"),
+});
 
 // Export the configuration object using buildConfig from Payload
 export default buildConfig({
-    // Set the server URL, using an environment variable if available
+    // Set the server URL, using the above environment variable in path
     serverURL: process.env.NEXT_PUBLIC_SERVER_URL || '',
 
-    // Define collections (currently empty, to be populated with data models)
-    collections: [],
+    // Define collections 
+    collections: [Users],
 
     // Specify custom routes, such as the admin route
     routes: {
@@ -20,6 +26,7 @@ export default buildConfig({
 
     // Configuration for the Payload CMS admin interface
     admin: {
+        user: 'users', //checks the users collection for everything auth related
         // Use the webpack bundler for asset bundling
         bundler: webpackBundler(),
 

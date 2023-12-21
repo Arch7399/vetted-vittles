@@ -1,7 +1,7 @@
 "use client";
 
 import { Icons } from "@/components/Icons";
-import { buttonVariants } from "@/components/ui/button";
+import { Button, buttonVariants } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { cn } from "@/lib/utils";
@@ -11,6 +11,7 @@ import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod"
 import { AuthCredentialsValidator, TAuthCredentialsValidator } from "@/lib/validators/auth-credentials-validator";
 import { trpc } from "@/trpc/client";
+import { toast } from "sonner";
 
 const Page = () => {
   const {
@@ -21,12 +22,16 @@ const Page = () => {
     resolver: zodResolver(AuthCredentialsValidator),
   });
 
-  const {data} = trpc.myApiRoute.useQuery();
-  console.log(data);
-  
+  const {mutate, isLoading} = trpc.auth.createPayloadUser.useMutation({
+    onError: (err) => {
+      if(err.data?.code === 'CONFLICT'){
+        toast.error('A user already exists, sign-in instead.');        
+      }
+    }
+  })
 
   function onSubmit({email, password} : TAuthCredentialsValidator) {
-    // send data to server for backend db stuff... check the next commit..
+    mutate({email, password});
   }
 
   return (
@@ -63,6 +68,7 @@ const Page = () => {
                 <Label htmlFor="password">Password</Label>
                 <Input
                 {...register("password")}
+                type="password"
                   className={cn({
                     "focus-visible:ring-red-500": errors.password,
                   })}
@@ -70,6 +76,8 @@ const Page = () => {
                 />
               </div>
             </div>
+            <Button className={cn('w-full mt-5', buttonVariants({
+            }))}>Sign up</Button>
           </form>
         </div>
       </div>
